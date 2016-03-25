@@ -34,7 +34,6 @@ class MaintainController extends Controller {
         $validator = Validator::make($request->all(), [
             'mycar_id' => 'required|integer'
         ]);
-        Log::info(Input::get('mycar_id'));
         if ($validator->fails()) {
             echo json_encode(['status'=>'false', 'msg'=>$validator->errors(), 'data'=>(object)null]);die;
         }
